@@ -1,722 +1,700 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
+    <title>爱心助学行动 - 让每个孩子都有书读</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-
-        :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
-        }
-
+        
         body {
-            background-color: var(--light);
-            color: var(--text);
             line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
-
-        header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
-
-        .nav-container {
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #2c8c99 0%, #1a5f7a 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #ffcc00;
+        }
+        
+        .logo-text h1 {
             font-size: 1.8rem;
-            font-weight: 700;
+            margin-bottom: 5px;
         }
-
-        .logo i {
-            font-size: 2rem;
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
-
+        
         nav ul {
             display: flex;
             list-style: none;
+            gap: 25px;
         }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--white);
+        
+        nav a {
+            color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 5px 0;
             position: relative;
         }
-
-        nav ul li a:hover {
-            color: var(--accent);
+        
+        nav a:hover {
+            color: #ffcc00;
         }
-
-        nav ul li a::after {
+        
+        nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+            background: #ffcc00;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
         }
-
-        nav ul li a:hover::after {
+        
+        nav a:hover::after {
             width: 100%;
         }
-
+        
+        /* 英雄区域 */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
+            color: white;
             text-align: center;
-            color: var(--white);
+            padding: 100px 0;
+            margin-bottom: 60px;
         }
-
+        
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
+        
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
-
-        .btn {
+        
+        .cta-button {
             display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 2rem;
+            background-color: #ffcc00;
+            color: #1a5f7a;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: 600;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-
-        .btn:hover {
-            background-color: var(--primary);
+        
+        .cta-button:hover {
+            background-color: #ffd633;
             transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
-
-        section {
-            padding: 5rem 0;
-        }
-
+        
+        /* 主要内容 */
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 50px;
+            color: #1a5f7a;
             position: relative;
-            display: inline-block;
+            padding-bottom: 15px;
         }
-
-        .section-title h2::after {
+        
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
+            background-color: #ffcc00;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
+        
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            display: flex;
+            flex-wrap: wrap;
             align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
         }
-
-        .about-img {
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
-        .about-img img {
+        
+        .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
-
-        .about-img:hover img {
+        
+        .about-image:hover img {
             transform: scale(1.05);
         }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
+        
+        /* 活动信息 */
+        .activities {
+            margin-bottom: 80px;
         }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
+        
+        .activity-cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-
-        .stat-item {
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-icon {
+            background-color: #1a5f7a;
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px;
             text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card h3 {
+            color: #1a5f7a;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* 参与方式 */
+        .participation {
+            margin-bottom: 80px;
+            background-color: #f0f7fa;
+            padding: 60px 0;
+            border-radius: 15px;
+        }
+        
+        .participation-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .option {
+            background: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
+            padding: 30px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
+            max-width: 350px;
             text-align: center;
-            padding: 5rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
         }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        
+        .option:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        
+        .option-icon {
+            font-size: 3rem;
+            color: #2c8c99;
+            margin-bottom: 20px;
         }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
+        
+        .option h3 {
+            color: #1a5f7a;
+            margin-bottom: 15px;
         }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
+        
+        /* 联系表单 */
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto 80px;
         }
-
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a5f7a;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #2c8c99;
+            outline: none;
+        }
+        
+        .submit-btn {
+            background-color: #2c8c99;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1a5f7a;
+        }
+        
+        /* 页脚 */
         footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
+            background-color: #1a5f7a;
+            color: white;
+            padding: 50px 0 20px;
         }
-
+        
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
         }
-
-        .footer-column h3 {
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #ffcc00;
         }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
+        
+        .footer-section ul {
             list-style: none;
         }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
         }
-
-        .footer-links li a {
-            color: var(--light);
+        
+        .footer-section a {
+            color: #ddd;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
-
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
+        
+        .footer-section a:hover {
+            color: #ffcc00;
         }
-
-        .social-links {
+        
+        .social-icons {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
+            margin-top: 20px;
         }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        
+        .social-icons a {
+            display: inline-block;
             width: 40px;
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: all 0.3s;
         }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
+        
+        .social-icons a:hover {
+            background-color: #ffcc00;
+            color: #1a5f7a;
+            transform: translateY(-3px);
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
         }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
             }
             
             .hero p {
                 font-size: 1.1rem;
             }
             
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 1rem 0;
-                text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
+            .contact-form {
+                padding: 25px;
             }
         }
-
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- 头部导航 -->
     <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
-            </div>
-            <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>爱心助学行动</h1>
+                        <p>让每个孩子都有书读</p>
+                    </div>
                 </div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+                <nav>
+                    <ul>
+                        <li><a href="#about">关于活动</a></li>
+                        <li><a href="#activities">活动内容</a></li>
+                        <li><a href="#participation">参与方式</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>助力贫困地区儿童教育</h2>
+            <p>我们致力于为偏远山区的孩子们提供学习资源、改善教学环境，让知识的阳光照亮每个角落。加入我们，为孩子们的未来贡献一份力量！</p>
+            <a href="#contact" class="cta-button">立即参与</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- 关于活动 -->
+    <section id="about" class="container">
+        <h2 class="section-title">关于爱心助学行动</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>“爱心助学行动”始于2015年，是一个专注于改善贫困地区儿童教育条件的公益项目。我们通过募集资金、物资和志愿者服务，为偏远山区的孩子们提供学习资源、改善教学环境、支持教师培训。</p>
+                <br>
+                <p>截至目前，我们已经在全国12个省份的偏远地区建立了58所爱心图书室，捐赠了超过10万册图书，为3000多名学生提供了学习用品，并资助了200多名贫困学生完成学业。</p>
+                <br>
+                <p>我们的使命是确保每个孩子都能享有平等的教育机会，无论他们出生在哪里。我们相信，教育是改变命运的最有力工具，也是打破贫困代际传递的关键。</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="孩子们在读书">
+            </div>
+        </div>
+    </section>
+
+    <!-- 活动内容 -->
+    <section id="activities" class="container activities">
+        <h2 class="section-title">我们的活动内容</h2>
+        <div class="activity-cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="card-content">
+                    <h3>建立爱心图书室</h3>
+                    <p>在偏远地区学校建立图书室，提供适合各年龄段学生阅读的书籍，培养孩子们的阅读习惯和自主学习能力。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="card-content">
+                    <h3>助学奖学金计划</h3>
+                    <p>为家庭经济困难但成绩优秀的学生提供奖学金，支持他们继续学业，减轻家庭经济负担。</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="card-content">
+                    <h3>教师培训支持</h3>
+                    <p>组织优秀教师志愿者前往偏远地区进行教学培训，提升当地教师的教学水平和专业能力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 参与方式 -->
+    <section id="participation" class="participation">
         <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
+            <h2 class="section-title">参与方式</h2>
+            <div class="participation-options">
+                <div class="option">
+                    <div class="option-icon">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h3>资金捐赠</h3>
+                    <p>任何金额的捐款都将直接用于购买学习用品、图书和改善教学设施。我们会定期公布资金使用情况。</p>
                 </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+                <div class="option">
+                    <div class="option-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>物资捐赠</h3>
+                    <p>捐赠适合中小学生阅读的图书、学习用品、体育器材等。我们会安排志愿者统一收集和分发。</p>
                 </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+                <div class="option">
+                    <div class="option-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>志愿服务</h3>
+                    <p>加入我们的志愿者团队，参与图书整理、活动组织、教学支持等工作。无论专业背景，我们都欢迎。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
-            </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+    <!-- 联系表单 -->
+    <section id="contact" class="container">
+        <h2 class="section-title">联系我们/报名参与</h2>
+        <div class="contact-form">
+            <form id="volunteer-form">
+                <div class="form-group">
+                    <label for="name">姓名 *</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+                <div class="form-group">
+                    <label for="email">电子邮箱 *</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
-                    </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
+                <div class="form-group">
+                    <label for="phone">联系电话</label>
+                    <input type="tel" id="phone" name="phone">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="participation-type">参与方式 *</label>
+                    <select id="participation-type" name="participation-type" required>
+                        <option value="">请选择参与方式</option>
+                        <option value="donation">资金捐赠</option>
+                        <option value="material">物资捐赠</option>
+                        <option value="volunteer">志愿服务</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">留言</label>
+                    <textarea id="message" name="message" rows="5" placeholder="请告诉我们您想了解的信息或对活动的建议..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交申请</button>
+            </form>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
-        <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
+    <!-- 页脚 -->
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <div class="footer-section">
+                    <h3>爱心助学行动</h3>
+                    <p>我们致力于为贫困地区儿童提供教育支持，让每个孩子都能享有平等的学习机会，用知识改变命运。</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#activities">活动内容</a></li>
+                        <li><a href="#participation">参与方式</a></li>
+                        <li><a href="#contact">联系我们</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
+                <div class="footer-section">
+                    <h3>联系信息</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市朝阳区公益路123号</li>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@loveeducation.org</li>
+                        <li><i class="fas fa-clock"></i> 周一至周五 9:00-18:00</li>
                     </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
+                <p>&copy; 2023 爱心助学行动 版权所有 | 备案号：京ICP备12345678号</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
+        // 表单提交处理
+        document.getElementById('volunteer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
+            // 获取表单数据
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const participationType = document.getElementById('participation-type').value;
+            
+            // 简单的表单验证
+            if(name && email && participationType) {
+                // 在实际应用中，这里应该将数据发送到服务器
+                alert(`感谢 ${name} 提交申请！\n我们已收到您的${getParticipationTypeText(participationType)}申请，将会在3个工作日内通过邮箱 ${email} 与您联系。`);
                 
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
+                // 重置表单
+                document.getElementById('volunteer-form').reset();
+            } else {
+                alert('请填写所有必填字段（标有*的字段）');
+            }
+        });
+        
+        function getParticipationTypeText(type) {
+            const types = {
+                'donation': '资金捐赠',
+                'material': '物资捐赠',
+                'volunteer': '志愿服务',
+                'other': '参与'
+            };
+            return types[type] || '参与';
         }
-
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        
+        // 平滑滚动到锚点
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
+                if(targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
     </script>
 </body>
-
 </html>
